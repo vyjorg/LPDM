@@ -1,0 +1,94 @@
+MEMO
+==============================
+EXEMPLE D'UTILISATION DE FEIGN
+==============================
+(Le template HTML est Thymeleaf)
+Chaque MS doit avoir son proptre numéro de port
+Ex : MS-Client :8080 / MS-Produits :9001
+(Est-ce une "good practice" ?)
+
+Générer le POM.xml avec starter.spring.io
+pour les dépendances et pour éviter les oublis
+et pour un gain de temps.
+
+Fil rouge :
+Le MS Client doit communiquer avec le MS Produits
+
++-----------------------------------------------+
+| Client : Main class                           |
++-----------------------------------------------+
+| // Package du proxy                           |
+| @EnableFeignClients("com.clientUI")           |
+| @SpringBootApplication                        |
+| public class ClientUI {                       |
+|   public static void main(String[] args){     |
+|      //...                                    |
+|   }                                           |
+| }                                             |
++-----------------------------------------------+
+
+Besoin du MS Client :
+Stocker les produits reçus dans un objet
+(Json > Obj Java)
+
+Solution :
+Créer un bean identique à l'entité Produit du
+MS Produits
+
++-----------------------------------------------+
+| Client : beans.Product class                  |
++-----------------------------------------------+
+| // Bean identique                             |
+| // avec attributs privés, getters/setters     |
+| // & un constructeur par défaut               |
++-----------------------------------------------+
+
+Besoin du MS Client :
+Une interface de proxy pour récupérer les objets Json
+reçus en liaison avec le MS Produits
+
++--------------------------------------------------------+
+| Client : proxies.MsProduitProxy interface              |
++--------------------------------------------------------+
+| // Name = nom du MS à appeler                          |
+| // Le nom du MS est a déclarer dans le fichier         |
+| // application.properties comme suit :                 |
+| // spring.appplication.name=ms-produits                |
+| // L'URL est celle qui sera appelée                    |
+| @FeignClient(name="ms-produits", url="localhost:9001") |
+| public interface MsProduitProxy {                      |
+|   // Méthodes à appeler dans le MS distant             |
+|   // définies dans l'interface du MS distant           |
+|   // L'obj Produit est celui définit plus haut         |
+|   @GetMapping(value="/produits")                       |
+|   List<Produit> getProductList();                      |
+| }                                                      |
++--------------------------------------------------------+
+
+Besoin du MS Client :
+Déclarer l'ensemble dans le controller du MS Client
+
++---------------------------------------------------------------+
+| Client : controller.ClientController class                    |
++---------------------------------------------------------------+
+| @Controller                                                   |
+| public class ClientController {                               |
+|   // Déclarer le proxy                                        |
+|   @Autowired                                                  |
+|   MsProduitProxy msProduitProxy;                              |
+|   @RequestMapping("/")                                        |
+|   public String acceuil(Model model){                         |
+|     // La méthode suivante va générer la requète HTTP,        |
+|     // communiquer avec le MS produits,                       |
+|     // récupérer la liste et la renvoyer                      |
+|     List<Product> produits = msProduitProxy.getProductList(); |
+|     // Pour passer la liste d'obj au template,                |
+|     // c'est là que l'instance Model intervient,              |
+|     // elle permet de créer une variable qui sera passée      |
+|     // au template                                            |
+|     model.addAttribut("produits", produits);                  |
+|     return "Accueil";                                         |
+| }                                                             |
++---------------------------------------------------------------+
+
+Reste à récupérer les objets envoyé dans la page HTML...
