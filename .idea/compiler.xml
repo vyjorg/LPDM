@@ -29,14 +29,14 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ms-authentication" options="-parameters" />
-      <module name="ms-location" options="-parameters" />
-      <module name="ms-order" options="-parameters" />
-      <module name="ms-product" options="-parameters" />
-      <module name="ms-stock" options="-parameters" />
-      <module name="ms-store" options="-parameters" />
-      <module name="ms-user" options="-parameters" />
-      <module name="ms-userentity" options="-parameters" />
+      <module name="ms-authentication" options="" />
+      <module name="ms-location" options="" />
+      <module name="ms-order" options="" />
+      <module name="ms-product" options="" />
+      <module name="ms-stock" options="" />
+      <module name="ms-store" options="" />
+      <module name="ms-user" options="" />
+      <module name="ms-userentity" options="" />
     </option>
   </component>
 </project>
