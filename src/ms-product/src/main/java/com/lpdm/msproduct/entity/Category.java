@@ -3,7 +3,7 @@ package com.lpdm.msproduct.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="stock",schema = "public")
+@Table(name="category",schema = "public")
 public class Category {
 
     @Id

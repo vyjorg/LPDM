@@ -21,7 +21,7 @@ public class Stock {
     @Column
     private String packaging;
 
-    @Column
+    @Column(name="unit_by_package")
     private Integer unitByPackage;
 
     public Integer getId() {

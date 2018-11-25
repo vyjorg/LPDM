@@ -13,7 +13,7 @@ public class Product {
     @Column
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -23,7 +23,7 @@ public class Product {
     @Column
     private double price;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "stock_id")
     private Stock stock;
 
