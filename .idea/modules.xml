@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/LPDM.iml" filepath="$PROJECT_DIR$/.idea/LPDM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-authentication/ms-authentication.iml" filepath="$PROJECT_DIR$/src/ms-authentication/ms-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-location/ms-location.iml" filepath="$PROJECT_DIR$/src/ms-location/ms-location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-order/ms-order.iml" filepath="$PROJECT_DIR$/src/ms-order/ms-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-product/ms-product.iml" filepath="$PROJECT_DIR$/src/ms-product/ms-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-stock/ms-stock.iml" filepath="$PROJECT_DIR$/src/ms-stock/ms-stock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-store/ms-store.iml" filepath="$PROJECT_DIR$/src/ms-store/ms-store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-user/ms-user.iml" filepath="$PROJECT_DIR$/src/ms-user/ms-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ms-userentity/ms-userentity.iml" filepath="$PROJECT_DIR$/src/ms-userentity/ms-userentity.iml" />
+    </modules>
+  </component>
+</project>

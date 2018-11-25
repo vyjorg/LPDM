@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ms-authentication:war">
+    <output-path>$PROJECT_DIR$/src/ms-authentication/target</output-path>
+    <root id="archive" name="ms-authentication-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ms-authentication:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/ms-authentication" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-location" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-stock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-store" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ms-userentity" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-authentication" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-location" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-order" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-product" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-stock" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-store" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-user" />
+    <file type="web" url="file://$PROJECT_DIR$/src/ms-userentity" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/ms-authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-location/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-order/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-product/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-stock/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-store/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-user/pom.xml" />
+        <option value="$PROJECT_DIR$/src/ms-userentity/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
