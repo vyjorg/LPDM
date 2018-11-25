@@ -13,6 +13,3 @@ services:
       #- './db:/docker-entrypoint-initdb.d'
     restart: always
     network_mode: bridge
-networks:
-  postgres:
-    driver: bridge

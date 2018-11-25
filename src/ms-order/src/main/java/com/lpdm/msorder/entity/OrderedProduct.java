@@ -9,10 +9,13 @@ public class OrderedProduct {
     @EmbeddedId
     private OrderedProductPK orderedProductPK = new OrderedProductPK();
 
-
     @ManyToOne
     @MapsId("orderId")
     private Order order;
+
+    @ManyToOne
+    @MapsId("productId")
+    private Product product;
 
     @Column
     private int quantity;
@@ -23,6 +26,14 @@ public class OrderedProduct {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
