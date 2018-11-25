@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  postgres:
+    image: postgres:alpine
+    ports:
+     - '28183:5432'
+    container_name: LPDM-MsOrderDB
+    environment:
+      POSTGRES_DB: lpdm
+      POSTGRES_USER: lpdm
+      POSTGRES_PASSWORD: lpdm
+    #volumes:
+      #- './db:/docker-entrypoint-initdb.d'
+    restart: always
+    network_mode: bridge
+networks:
+  postgres:
+    driver: bridge
