@@ -1,14 +1,36 @@
 package com.lpdm.msproduct.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="product",schema = "public")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String name;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
     private Category category;
+
+    @Column
     private String label;
+
+    @Column
     private double price;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "stock_id")
     private Stock stock;
+
+    @Column
     private String picture;
+
+    @Column(name="productor_id")
     private Integer productorID;
 
     public Integer getId() {

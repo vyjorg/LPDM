@@ -1,14 +1,27 @@
 package com.lpdm.msproduct.entity;
 
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name="stock",schema = "public")
 public class Stock {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private Integer quantity;
+
+    @Column(name="expire_date")
     private LocalDateTime expireDate;
+
+    @Column
     private String packaging;
+
+    @Column
     private Integer unitByPackage;
 
     public Integer getId() {

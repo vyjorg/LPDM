@@ -1,8 +1,16 @@
 package com.lpdm.msproduct.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="stock",schema = "public")
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String name;
 
     public Integer getId() {
