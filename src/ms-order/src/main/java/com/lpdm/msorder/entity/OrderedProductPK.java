@@ -40,6 +40,7 @@ public class OrderedProductPK implements Serializable {
     public int hashCode(){
         return Objects.hash(orderId, productId);
     }
+
     @Override
     public boolean equals(Object object){
         if(this == object) return true;

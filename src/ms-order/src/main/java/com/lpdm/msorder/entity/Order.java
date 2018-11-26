@@ -18,22 +18,24 @@ public class Order {
     @Column(name = "order_date")
     private LocalDateTime  orderDate;
 
-    @Column(length = 20)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "status_id")
+    @Enumerated(EnumType.ORDINAL)
     private Status status;
 
-    @Column(columnDefinition = "boolean default false", nullable = false)
-    private Boolean paid;
-
-    @Column(length = 20)
-    @Enumerated(EnumType.STRING)
+    @Column(name = "payment_id")
+    @Enumerated(EnumType.ORDINAL)
     private Payment payment;
 
     @Column(name = "store_id")
     private int storeId;
 
+    //@EmbeddedId
+    //private UserPK userPK = new UserPK();
+
+    //@MapsId("customerId")
+    @Transient
     @Column(name = "customer_id")
-    private int customerId;
+    private User user = new User(1, "mike", "brant");
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "order")
     private List<OrderedProduct> orderedProducts;
@@ -70,14 +72,6 @@ public class Order {
         this.status = status;
     }
 
-    public boolean isPaid() {
-        return paid;
-    }
-
-    public void setPaid(boolean paid) {
-        this.paid = paid;
-    }
-
     public Payment getPayment() {
         return payment;
     }
@@ -94,12 +88,12 @@ public class Order {
         this.storeId = storeId;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public User getUser() {
+        return user;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<OrderedProduct> getOrderedProducts() {

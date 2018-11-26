@@ -13,10 +13,13 @@ public class CloudConfigController {
     @Value("${msorder.fullname:Un nom lambda}")
     private String fullName;
 
+    @Value("${spring.application.name:un nom lambda}")
+    private String appName;
+
     @ResponseBody
     @RequestMapping("/showInfos")
     public String showInfos(){
 
-        return "Microservice : " + fullName;
+        return "Microservice : " + fullName + "\n" + "aplication : " + appName;
     }
 }

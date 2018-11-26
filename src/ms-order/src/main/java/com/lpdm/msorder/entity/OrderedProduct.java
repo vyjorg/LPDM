@@ -13,9 +13,9 @@ public class OrderedProduct {
     @MapsId("orderId")
     private Order order;
 
-    @ManyToOne
+    @Transient
     @MapsId("productId")
-    private Product product;
+    private Product product = new Product(orderedProductPK.getProductId(), "Fromage");
 
     @Column
     private int quantity;
@@ -28,19 +28,19 @@ public class OrderedProduct {
         this.order = order;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
