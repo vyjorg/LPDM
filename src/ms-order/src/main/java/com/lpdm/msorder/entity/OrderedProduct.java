@@ -1,5 +1,7 @@
 package com.lpdm.msorder.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,11 +13,11 @@ public class OrderedProduct {
 
     @ManyToOne
     @MapsId("orderId")
+    @JsonBackReference
     private Order order;
 
     @Transient
-    @MapsId("productId")
-    private Product product = new Product(orderedProductPK.getProductId(), "Fromage");
+    private Product product;
 
     @Column
     private int quantity;

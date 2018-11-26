@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 @FeignClient(name = "ms-product", url="localhost:28085")
-public interface MsProductProxy {
+public interface ProductProxy {
 
     @RequestMapping(value = "/products",
             method = RequestMethod.GET, consumes = "application/json")

@@ -1,5 +1,8 @@
 package com.lpdm.msorder.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,17 +29,21 @@ public class Order {
     @Enumerated(EnumType.ORDINAL)
     private Payment payment;
 
+    @JsonIgnore
     @Column(name = "store_id")
     private int storeId;
 
-    //@EmbeddedId
-    //private UserPK userPK = new UserPK();
-
-    //@MapsId("customerId")
     @Transient
-    @Column(name = "customer_id")
-    private User user = new User(1, "mike", "brant");
+    private Store store;
 
+    @JsonIgnore
+    @Column(name = "customer_id")
+    private int customerId;
+
+    @Transient
+    private User customer;
+
+    @JsonManagedReference
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "order")
     private List<OrderedProduct> orderedProducts;
 
@@ -80,6 +87,14 @@ public class Order {
         this.payment = payment;
     }
 
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
     public int getStoreId() {
         return storeId;
     }
@@ -88,12 +103,20 @@ public class Order {
         this.storeId = storeId;
     }
 
-    public User getUser() {
-        return user;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
     }
 
     public List<OrderedProduct> getOrderedProducts() {

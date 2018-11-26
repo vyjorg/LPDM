@@ -1,39 +1,80 @@
 package com.lpdm.msorder.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
-
-@NoArgsConstructor
-@Getter @Setter
-@ToString
 public class Product {
 
     private int id;
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Category category;
-
     private String label;
     private double price;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Stock stock;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private User producer;
-
     private String picture;
 
-    Product(int id, String name){
+    public Product() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
+
+    public User getProducer() {
+        return producer;
+    }
+
+    public void setProducer(User producer) {
+        this.producer = producer;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

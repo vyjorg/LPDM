@@ -1,11 +1,12 @@
 package com.lpdm.msorder.entity;
 
-public class Category {
+public class Store {
 
     private int id;
     private String name;
+    private Address address;
 
-    public Category() {
+    public Store() {
     }
 
     public int getId() {
@@ -22,5 +23,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

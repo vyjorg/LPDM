@@ -2,7 +2,7 @@ package com.lpdm.msorder.entity;
 
 public enum Status {
 
-    UNFINALIZED(1), PAID(2), PROCESSED(3), INDELIVERING(4), DELIVERED(5);
+    UNFINALIZED(1), PAID(2), PROCESSED(3), IN_DELIVERING(4), DELIVERED(5);
 
     private int id;
 

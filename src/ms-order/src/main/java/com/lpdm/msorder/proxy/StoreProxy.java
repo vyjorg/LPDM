@@ -1,6 +1,6 @@
 package com.lpdm.msorder.proxy;
 
-import com.lpdm.msorder.entity.User;
+import com.lpdm.msorder.entity.Store;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Component
-@FeignClient(name = "ms-user", url = "localhost:28082")
-public interface MsUserProxy {
+@FeignClient(name = "ms-store", url = "localhost:28084")
+public interface StoreProxy {
 
-    @RequestMapping(value = "/user/{id}",
+    @RequestMapping(value = "/stores/{id}",
             method = RequestMethod.GET, consumes = "application/json")
-    User findById(@PathVariable(value = "id") int id);
+    Store findById(@PathVariable(value = "id") int id);
 }
