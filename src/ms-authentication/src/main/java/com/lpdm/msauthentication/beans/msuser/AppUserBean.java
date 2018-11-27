@@ -3,7 +3,7 @@ package com.lpdm.msauthentication.beans.msuser;
 import com.lpdm.msauthentication.beans.msuser.enumeration.Access;
 
 
-public class AppUserbean {
+public class AppUserBean {
 
     private int id;
 
@@ -18,16 +18,16 @@ public class AppUserbean {
 
     private AddressBean address;
 
-    public AppUserbean() {
+    public AppUserBean() {
     }
 
-    public AppUserbean(String email, String password, Enum<Access> role) {
+    public AppUserBean(String email, String password, Enum<Access> role) {
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
-    public AppUserbean(String email, String password, Enum<Access> role, String name, String firstName, AddressBean address) {
+    public AppUserBean(String email, String password, Enum<Access> role, String name, String firstName, AddressBean address) {
         this.email = email;
         this.password = password;
         this.role = role;
