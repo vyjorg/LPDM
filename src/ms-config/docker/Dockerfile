@@ -19,3 +19,5 @@ WORKDIR /app
 COPY --from=clone /app/LPDM/src/ms-config /app
 # Build the project
 RUN mvn clean package
+
+CMD ["java", "-jar", "target/ms-config-0.0.1-SNAPSHOT.jar"]
