@@ -25,7 +25,7 @@ public class AppUser {
     private String name;
     private String firstName;
 
-    private Address address;
+    private String address;
 
     public AppUser() {
     }
@@ -35,7 +35,7 @@ public class AppUser {
         this.password = password;
     }
 
-    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role, String name, String firstName, Address address) {
+    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role, String name, String firstName, String address) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -92,11 +92,11 @@ public class AppUser {
         this.firstName = firstName;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

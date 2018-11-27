@@ -16,7 +16,7 @@ public class City {
     private String name;
 
     @NotNull
-    private Country country;
+    private String country;
 
     public City() {
     }

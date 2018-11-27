@@ -70,6 +70,7 @@
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.197" />
         </element>
       </element>
       <element id="directory" name="META-INF">

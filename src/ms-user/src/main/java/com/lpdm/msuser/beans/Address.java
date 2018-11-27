@@ -1,19 +1,25 @@
 package com.lpdm.msuser.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Address {
 
+    @Id
+    @GeneratedValue
+    private int id;
+
     private double number;
     private String street;
     private String zipcode;
-    private City city;
+    private String city;
 
     public Address() {
     }
 
-    public Address(double number, String street, String zipcode, City city) {
+    public Address(double number, String street, String zipcode, String city) {
         this.number = number;
         this.street = street;
         this.zipcode = zipcode;
@@ -44,11 +50,11 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public City getCity() {
+    public String getString() {
         return city;
     }
 
-    public void setCity(City city) {
+    public void setString(String city) {
         this.city = city;
     }
 
