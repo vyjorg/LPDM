@@ -20,7 +20,7 @@ public class Store {
     private int addressId;
 
     @Transient
-    private Address address;
+    private Location location;
 
     public Store() {
     }
@@ -49,11 +49,11 @@ public class Store {
         this.addressId = addressId;
     }
 
-    public Address getAddress() {
-        return address;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

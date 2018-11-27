@@ -1,14 +1,14 @@
 package com.lpdm.msstore.entity;
 
-public class Address {
+public class Location {
 
     private int id;
     private String streetName;
     private String streetNumber;
     private String complement;
-    private int cityId;
+    private City city;
 
-    public Address() {
+    public Location() {
     }
 
     public int getId() {
@@ -43,11 +43,11 @@ public class Address {
         this.complement = complement;
     }
 
-    public int getCityId() {
-        return cityId;
+    public City getCity() {
+        return city;
     }
 
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
+    public void setCity(City city) {
+        this.city = city;
     }
 }

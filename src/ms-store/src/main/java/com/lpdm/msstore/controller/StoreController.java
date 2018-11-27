@@ -1,7 +1,7 @@
 package com.lpdm.msstore.controller;
 
 import com.lpdm.msstore.dao.StoreDao;
-import com.lpdm.msstore.entity.Address;
+import com.lpdm.msstore.entity.Location;
 import com.lpdm.msstore.entity.Store;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,12 +21,12 @@ public class StoreController {
     private final Logger log = LogManager.getLogger(StoreController.class);
 
     private final StoreDao storeDao;
-    private final AddressController addressController;
+    private final LocationController locationController;
 
     @Autowired
-    public StoreController(StoreDao storeDao, AddressController addressController) {
+    public StoreController(StoreDao storeDao, LocationController locationController) {
         this.storeDao = storeDao;
-        this.addressController = addressController;
+        this.locationController = locationController;
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -35,17 +35,19 @@ public class StoreController {
         Optional<Store> optionalStore = storeDao.findById(id);
 
         if(optionalStore.isPresent()){
+
             Store store = optionalStore.get();
-            Address address = addressController.findAddressById(store.getAddressId());
-            store.setAddress(address);
+
+            Location location = locationController.findLocationById(store.getAddressId());
+            if(location != null) location.setId(store.getAddressId());
+            else log.warn("Location object is null");
+            store.setLocation(location);
+
             return store;
         }
-        else return null;
-    }
-
-    @GetMapping("/")
-    public String index(){
-
-        return "Well done !";
+        else {
+            log.warn("Store object is null");
+            return null;
+        }
     }
 }

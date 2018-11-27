@@ -1,6 +1,6 @@
 package com.lpdm.msstore.proxy;
 
-import com.lpdm.msstore.entity.Location;
+import com.lpdm.msstore.entity.Order;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Component
-@FeignClient(name = "ms-${microservice.location.name}",
-        url = "${microservice.domain}"+":"+"${microservice.location.port}")
-public interface LocationProxy {
+@FeignClient(name = "${microservice.order.name}",
+        url = "${microservice.domain}"+":"+"${microservice.order.port}")
+public interface OrderProxy {
 
-    @RequestMapping(value = "/locations/{id}",
+    @RequestMapping(value = "orders/{id}",
             method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    Location findLocationById(@PathVariable(value = "id") int id);
-
+    Order findOrderById(@PathVariable(value = "id") int id);
 }
