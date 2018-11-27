@@ -56,9 +56,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--
-		Ajout de Spring Security
-		-->
+	<!-- ***************Spring Security*************** -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
@@ -77,7 +75,27 @@
 			<version>${springsecurity.version}</version>
 		</dependency>
 
-	</dependencies>
+        <!-- ***************Spring JPA & H2*************** -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- ***************Front-End*************** -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.0.0-2</version>
+        </dependency>
+
+    </dependencies>
 
 	<dependencyManagement>
 		<dependencies>

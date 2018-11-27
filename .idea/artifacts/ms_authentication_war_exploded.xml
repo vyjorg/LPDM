@@ -77,6 +77,10 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.197" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:4.0.0-2" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:3.0.0" />
+          <element id="library" level="project" name="Maven: org.webjars:popper.js:1.12.9-1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
