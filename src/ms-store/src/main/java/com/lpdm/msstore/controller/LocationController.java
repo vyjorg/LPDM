@@ -1,6 +1,6 @@
 package com.lpdm.msstore.controller;
 
-import com.lpdm.msstore.entity.Address;
+import com.lpdm.msstore.entity.Location;
 import com.lpdm.msstore.proxy.LocationProxy;
 import feign.FeignException;
 import org.apache.logging.log4j.LogManager;
@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/addresses")
-public class AddressController {
+@RequestMapping("/locations")
+public class LocationController {
 
-    private final Logger log = LogManager.getLogger(AddressController.class);
+    private final Logger log = LogManager.getLogger(LocationController.class);
 
     private final LocationProxy locationProxy;
 
     @Autowired
-    public AddressController(LocationProxy locationProxy) {
+    public LocationController(LocationProxy locationProxy) {
         this.locationProxy = locationProxy;
     }
 
     @GetMapping("/{id}")
-    public Address findAddressById(@PathVariable int id){
+    public Location findLocationById(@PathVariable int id){
 
-        Address address = null;
-        try{ address = locationProxy.findAddressById(id); }
+        Location location = null;
+        try{ location = locationProxy.findLocationById(id); }
         catch (FeignException e){ log.error(e.getMessage()); }
-        return address;
+        return location;
     }
 }
