@@ -1,9 +1,9 @@
 package com.lpdm.msuser.beans.enumeration;
 
-public enum  Access {
+public enum AccessEnum {
 
     ADMIN,
     DELIVERER,
     CONSUMER,
-    SUPPLIER
+    SUPPLIER,
 }

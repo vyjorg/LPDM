@@ -1,6 +1,6 @@
 package com.lpdm.msuser.beans;
 
-import com.lpdm.msuser.Access;
+import com.lpdm.msuser.beans.enumeration.AccessEnum;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ public class AppUser {
     @NotNull
     private String password;
 
-    private Enum<Access> role;
+    private Enum<AccessEnum> role;
 
     private String name;
     private String firstName;
@@ -30,12 +30,12 @@ public class AppUser {
     public AppUser() {
     }
 
-    public AppUser(@NotNull String email, @NotNull String password) {
+    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role) {
         this.email = email;
         this.password = password;
     }
 
-    public AppUser(@NotNull String email, @NotNull String password, Enum<Access> role, String name, String firstName, Address address) {
+    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role, String name, String firstName, Address address) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -68,11 +68,11 @@ public class AppUser {
         this.password = password;
     }
 
-    public Enum<Access> getRole() {
+    public Enum<AccessEnum> getRole() {
         return role;
     }
 
-    public void setRole(Enum<Access> role) {
+    public void setRole(Enum<AccessEnum> role) {
         this.role = role;
     }
 

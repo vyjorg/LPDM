@@ -21,9 +21,10 @@ public class AppUserbean {
     public AppUserbean() {
     }
 
-    public AppUserbean(String email, String password) {
+    public AppUserbean(String email, String password, Enum<Access> role) {
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public AppUserbean(String email, String password, Enum<Access> role, String name, String firstName, AddressBean address) {
