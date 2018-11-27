@@ -1,5 +1,21 @@
-FROM openjdk:8-alpine
-COPY ./ms-config-0.0.1-SNAPSHOT.jar /usr/src/lpdm/ms-config/
-WORKDIR /usr/src/lpdm/ms-config
-EXPOSE 28088
-CMD ["java", "-jar", "ms-config-0.0.1-SNAPSHOT.jar"]
+#--------------------------.
+# GIT                      |
+#--------------------------'
+FROM alpine/git as clone
+# Set the working directory
+WORKDIR /app
+# Add Json lastest SHA commit to check update for the clone cmd
+ADD https://api.github.com/repos/vyjorg/LPDM/git/refs/heads/develop/msconfig /app
+# Clone the Github repository
+RUN git clone -b develop/msconfig https://github.com/vyjorg/LPDM.git
+
+#--------------------------.
+# MAVEN                    |
+#--------------------------'
+FROM maven:3.6-jdk-8-alpine as builder
+# Set the working directory
+WORKDIR /app
+# Copy data from the cloned repository to the working directory
+COPY --from=clone /app/LPDM/src/ms-config /app
+# Build the project
+RUN mvn clean package
