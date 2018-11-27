@@ -2,6 +2,7 @@
 .idea/workspace.xml
 .idea/dataSources/
 .idea/httpRequests/
+.idea/uiDesigner.xml
 src/ms-authentication/src/main/resources/static/
 src/ms-authentication/src/main/resources/templates/
 src/ms-authentication/src/main/webapp/
