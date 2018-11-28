@@ -13,14 +13,14 @@ public class ProductController {
     @Autowired
     private ProductDao productDao;
 
-    @GetMapping(value = "/Products")
+    @GetMapping(value = "/products")
     public List<Product> listProduct(){
         List<Product> list = productDao.findAll();
 
         return list;
     }
 
-    @GetMapping(value="/Product/{id}")
+    @GetMapping(value="/products/{id}")
     public Product findProduct(@PathVariable int id){
         Product product = productDao.findById(id);
 
