@@ -1,7 +1,13 @@
 package com.lpdm.msstore;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import com.lpdm.msstore.controller.LocationController;
+import com.lpdm.msstore.controller.OrderController;
+import com.lpdm.msstore.controller.StoreController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +15,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class MsStoreApplicationTests {
 
+	@Autowired LocationController locationController;
+	@Autowired OrderController orderController;
+	@Autowired StoreController storeController;
+
 	@Test
 	public void contextLoads() {
+
+		assertThat(locationController).isNotNull();
+		assertThat(orderController).isNotNull();
+		assertThat(storeController).isNotNull();
 	}
 
 }

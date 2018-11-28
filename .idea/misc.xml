@@ -16,14 +16,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ms-authentication/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-location/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-order/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-product/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-stock/pom.xml" />
         <option value="$PROJECT_DIR$/src/ms-store/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-user/pom.xml" />
-        <option value="$PROJECT_DIR$/src/ms-userentity/pom.xml" />
       </list>
     </option>
   </component>
