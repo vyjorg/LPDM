@@ -23,9 +23,8 @@ public class Product {
     @Column
     private double price;
 
-    @OneToOne
-    @JoinColumn(name = "stock_id")
-    private Stock stock;
+    @Column(name="stock_id")
+    private Integer stockId;
 
     @Column
     private String picture;
@@ -73,12 +72,12 @@ public class Product {
         this.price = price;
     }
 
-    public Stock getStock() {
-        return stock;
+    public Integer getStockId() {
+        return stockId;
     }
 
-    public void setStock(Stock stock) {
-        this.stock = stock;
+    public void setStockId(Integer stockId) {
+        this.stockId = stockId;
     }
 
     public String getPicture() {
