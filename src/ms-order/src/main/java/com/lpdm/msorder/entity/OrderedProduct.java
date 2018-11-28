@@ -1,6 +1,7 @@
 package com.lpdm.msorder.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 public class OrderedProduct {
 
     @EmbeddedId
+    @JsonIgnore
     private OrderedProductPK orderedProductPK = new OrderedProductPK();
 
     @ManyToOne
@@ -44,5 +46,13 @@ public class OrderedProduct {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public OrderedProductPK getOrderedProductPK() {
+        return orderedProductPK;
+    }
+
+    public void setOrderedProductPK(OrderedProductPK orderedProductPK) {
+        this.orderedProductPK = orderedProductPK;
     }
 }

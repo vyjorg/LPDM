@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Optional;
+
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -36,8 +38,9 @@ public class StoreControllerTest {
         Store store = new Store();
         store.setId(1);
         store.setName("myStore");
+        Optional<Store> optionalStore = Optional.of(store);
 
-        Mockito.when(storeController.findStoreById(1)).thenReturn(store);
+        Mockito.when(storeController.findStoreById(1)).thenReturn(optionalStore);
 
         mockMvc.perform(get("/stores/1"))
                 .andExpect(status().isOk())

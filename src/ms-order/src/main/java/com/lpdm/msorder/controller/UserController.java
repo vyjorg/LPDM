@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -24,13 +26,13 @@ public class UserController {
     }
 
     @RequestMapping("/{id}")
-    public User findUserById(@PathVariable int id){
+    public Optional<User> findUserById(@PathVariable int id){
 
-        User user = null;
+        Optional<User> optionalUser = Optional.empty();
 
-        try { user = userProxy.findById(id); }
+        try { optionalUser = userProxy.findById(id); }
         catch (FeignException e) { log.error(e.getMessage()); }
 
-        return user;
+        return optionalUser;
     }
 }

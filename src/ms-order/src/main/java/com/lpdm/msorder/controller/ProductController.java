@@ -1,7 +1,7 @@
 package com.lpdm.msorder.controller;
 
-import com.lpdm.msorder.entity.Store;
-import com.lpdm.msorder.proxy.StoreProxy;
+import com.lpdm.msorder.entity.Product;
+import com.lpdm.msorder.proxy.ProductProxy;
 import feign.FeignException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,26 +13,26 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/stores")
-public class StoreController {
+@RequestMapping("/products")
+public class ProductController {
 
     private final Logger log = LogManager.getLogger(this.getClass());
 
-    private final StoreProxy storeProxy;
+    private final ProductProxy productProxy;
 
     @Autowired
-    public StoreController(StoreProxy storeProxy) {
-        this.storeProxy = storeProxy;
+    public ProductController(ProductProxy productProxy) {
+        this.productProxy = productProxy;
     }
 
     @RequestMapping("/{id}")
-    public Optional<Store> findStoreById(@PathVariable int id){
+    public Optional<Product> findProductById(@PathVariable int id){
 
-        Optional<Store> optionalStore = Optional.empty();
+        Optional<Product> optionalProduct = Optional.empty();
 
-        try{ optionalStore = storeProxy.findById(id); }
+        try { optionalProduct = productProxy.findById(id); }
         catch (FeignException e) { log.error(e.getMessage()); }
 
-        return optionalStore;
+        return optionalProduct;
     }
 }
