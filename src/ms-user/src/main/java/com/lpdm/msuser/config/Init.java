@@ -22,8 +22,6 @@ public class Init implements CommandLineRunner {
 
         AppUser regUser1 = new AppUser("jaycecordon@gmail.com", "reguser1", AccessEnum.CONSUMER);
 
-
-
         appUserRepository.save(admin1);
         appUserRepository.save(admin2);
         appUserRepository.save(admin3);
