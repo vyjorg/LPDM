@@ -1,9 +1,7 @@
 package com.lpdm.msorder.controller;
 
 import com.lpdm.msorder.dao.OrderDao;
-import com.lpdm.msorder.entity.Order;
-import com.lpdm.msorder.entity.Store;
-import com.lpdm.msorder.entity.User;
+import com.lpdm.msorder.entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +19,15 @@ public class OrderController {
     private final OrderDao orderDao;
     private final UserController userController;
     private final StoreController storeController;
+    private final ProductController productController;
 
     @Autowired
-    public OrderController(StoreController storeController, OrderDao orderDao, UserController userController) {
+    public OrderController(StoreController storeController, OrderDao orderDao,
+                           UserController userController, ProductController productController) {
         this.storeController = storeController;
         this.orderDao = orderDao;
         this.userController = userController;
+        this.productController = productController;
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -47,6 +48,14 @@ public class OrderController {
             if(user != null) user.setId(order.getCustomerId());
             else log.warn("User object is null");
             order.setCustomer(user);
+
+            for(OrderedProduct orderedProduct : order.getOrderedProducts()){
+                int productId = orderedProduct.getOrderedProductPK().getProductId();
+                Product product = productController.findProductById(productId);
+                if(product != null) product.setId(productId);
+                else log.warn("Product is null");
+                orderedProduct.setProduct(product);
+            }
 
             return order;
         }

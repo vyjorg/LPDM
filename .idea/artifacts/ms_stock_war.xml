@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ms-stock:war">
-    <output-path>$PROJECT_DIR$/src/ms-stock/target</output-path>
-    <root id="archive" name="ms-stock-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="ms-stock:war exploded" />
-    </root>
-  </artifact>
-</component>
