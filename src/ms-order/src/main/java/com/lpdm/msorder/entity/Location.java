@@ -1,6 +1,6 @@
 package com.lpdm.msorder.entity;
 
-public class Address {
+public class Location {
 
     private int id;
     private String streetName;
@@ -8,7 +8,15 @@ public class Address {
     private String complement;
     private int cityId;
 
-    public Address() {
+    public Location() {
+    }
+
+    public Location(int id, String streetName, String streetNumber, String complement, int cityId) {
+        this.id = id;
+        this.streetName = streetName;
+        this.streetNumber = streetNumber;
+        this.complement = complement;
+        this.cityId = cityId;
     }
 
     public int getId() {
