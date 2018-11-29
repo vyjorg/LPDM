@@ -1,8 +1,15 @@
 
-
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
-/.idea/
+.idea/workspace.xml
+src/main/resources/static/
+src/main/resources/templates/
+src/main/webapp/
+.idea/compiler.xml
+.idea/dataSources/
+src/ms-authentication/
+src/ms-location/
+src/ms-product/
+src/ms-stock/
+src/ms-store/
+src/ms-user/
+src/ms-userentity/
+!/.idea/compiler.xml
