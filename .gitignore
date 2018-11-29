@@ -1,2 +1,5 @@
 
 .idea/workspace.xml
+src/main/resources/static/
+src/main/resources/templates/
+src/main/webapp/
