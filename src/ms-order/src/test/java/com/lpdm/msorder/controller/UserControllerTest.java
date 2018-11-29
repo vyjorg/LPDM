@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Optional;
+
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -38,8 +40,9 @@ public class UserControllerTest {
         user.setId(1);
         user.setFirstName("myFirstName");
         user.setLastName("myLastName");
+        Optional<User> optionalUser = Optional.of(user);
 
-        Mockito.when(userController.findUserById(1)).thenReturn(user);
+        Mockito.when(userController.findUserById(1)).thenReturn(optionalUser);
 
         mockMvc.perform(get("/users/1"))
                 .andExpect(status().isOk())
