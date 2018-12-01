@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication
-@EnableFeignClients("com.lpdm.msauthentification")
+@SpringBootApplication//(scanBasePackages= "com.lpdm.msauthentification")
+@EnableFeignClients("com.lpdm.msauthentication")
 public class MsAuthenticationApplication {
 
 	public static void main(String[] args) {
