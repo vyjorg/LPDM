@@ -1,4 +1,4 @@
-package com.lpdm.msauthentication.controllers;
+package com.lpdm.msuser.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

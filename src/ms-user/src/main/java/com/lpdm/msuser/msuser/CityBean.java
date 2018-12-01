@@ -1,11 +1,11 @@
-package com.lpdm.msauthentication.beans.msuser;
+package com.lpdm.msuser.msuser;
 
-public class CountryBean {
+public class CityBean {
 
     private int id;
     private String name;
 
-    public CountryBean() {
+    public CityBean() {
     }
 
     public int getId() {
@@ -26,7 +26,7 @@ public class CountryBean {
 
     @Override
     public String toString() {
-        return "CountryBean{" +
+        return "CityBean{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

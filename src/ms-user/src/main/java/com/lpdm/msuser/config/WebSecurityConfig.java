@@ -1,4 +1,4 @@
-package com.lpdm.msauthentication.config;
+package com.lpdm.msuser.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

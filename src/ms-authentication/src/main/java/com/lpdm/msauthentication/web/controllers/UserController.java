@@ -1,12 +1,11 @@
-package com.lpdm.msuser.web.controllers;
+package com.lpdm.msauthentication.web.controllers;
 
-import com.lpdm.msuser.beans.AppUser;
-import com.lpdm.msuser.dao.AppUserRepository;
-import com.lpdm.msuser.web.exceptions.UserNotFoundException;
+import com.lpdm.msauthentication.dao.AppUserRepository;
+import com.lpdm.msauthentication.web.exceptions.UserNotFoundException;
+import com.lpdm.msauthentication.beans.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.Optional;
 

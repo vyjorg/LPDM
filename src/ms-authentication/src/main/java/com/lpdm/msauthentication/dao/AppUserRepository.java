@@ -1,6 +1,6 @@
-package com.lpdm.msuser.dao;
+package com.lpdm.msauthentication.dao;
 
-import com.lpdm.msuser.beans.AppUser;
+import com.lpdm.msauthentication.beans.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

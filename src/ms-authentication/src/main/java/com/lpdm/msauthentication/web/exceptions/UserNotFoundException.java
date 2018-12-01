@@ -1,4 +1,4 @@
-package com.lpdm.msuser.web.exceptions;
+package com.lpdm.msauthentication.web.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

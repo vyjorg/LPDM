@@ -1,4 +1,4 @@
-package com.lpdm.msuser.beans;
+package com.lpdm.msauthentication.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

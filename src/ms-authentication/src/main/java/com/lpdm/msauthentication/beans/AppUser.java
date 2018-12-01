@@ -1,33 +1,41 @@
-package com.lpdm.msauthentication.beans.msuser;
+package com.lpdm.msauthentication.beans;
 
-import com.lpdm.msauthentication.beans.msuser.enumeration.Access;
+import com.lpdm.msauthentication.beans.enumeration.AccessEnum;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
-public class AppUserBean {
+@Entity
+public class AppUser {
 
+    @Id
+    @GeneratedValue
     private int id;
 
+    @NotNull
     private String email;
 
+    @NotNull
     private String password;
 
-    private Enum<Access> role;
+    private Enum<AccessEnum> role;
 
     private String name;
     private String firstName;
 
-    private AddressBean address;
+    private String address;
 
-    public AppUserBean() {
+    public AppUser() {
     }
 
-    public AppUserBean(String email, String password, Enum<Access> role) {
+    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role) {
         this.email = email;
         this.password = password;
-        this.role = role;
     }
 
-    public AppUserBean(String email, String password, Enum<Access> role, String name, String firstName, AddressBean address) {
+    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role, String name, String firstName, String address) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -60,11 +68,11 @@ public class AppUserBean {
         this.password = password;
     }
 
-    public Enum<Access> getRole() {
+    public Enum<AccessEnum> getRole() {
         return role;
     }
 
-    public void setRole(Enum<Access> role) {
+    public void setRole(Enum<AccessEnum> role) {
         this.role = role;
     }
 
@@ -84,11 +92,11 @@ public class AppUserBean {
         this.firstName = firstName;
     }
 
-    public AddressBean getAddressBean() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddressBean(AddressBean address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

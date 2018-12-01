@@ -1,24 +1,11 @@
-package com.lpdm.msuser.beans;
+package com.lpdm.msuser.msuser;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+public class CountryBean {
 
-@Entity
-public class City {
-
-    @Id
-    @GeneratedValue
     private int id;
-
-    @NotNull
     private String name;
 
-    @NotNull
-    private String country;
-
-    public City() {
+    public CountryBean() {
     }
 
     public int getId() {
@@ -39,7 +26,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "CityBean{" +
+        return "CountryBean{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

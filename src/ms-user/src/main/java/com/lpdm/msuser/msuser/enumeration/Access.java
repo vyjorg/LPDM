@@ -1,4 +1,4 @@
-package com.lpdm.msauthentication.beans.msuser.enumeration;
+package com.lpdm.msuser.msuser.enumeration;
 
 public enum Access {
 

@@ -1,8 +1,8 @@
-package com.lpdm.msuser.config;
+package com.lpdm.msauthentication.config;
 
-import com.lpdm.msuser.beans.AppUser;
-import com.lpdm.msuser.beans.enumeration.AccessEnum;
-import com.lpdm.msuser.dao.AppUserRepository;
+import com.lpdm.msauthentication.beans.AppUser;
+import com.lpdm.msauthentication.beans.enumeration.AccessEnum;
+import com.lpdm.msauthentication.dao.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

@@ -1,41 +1,33 @@
-package com.lpdm.msuser.beans;
+package com.lpdm.msuser.msuser;
 
-import com.lpdm.msuser.beans.enumeration.AccessEnum;
+import com.lpdm.msuser.msuser.enumeration.Access;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
-@Entity
-public class AppUser {
+public class AppUserBean {
 
-    @Id
-    @GeneratedValue
     private int id;
 
-    @NotNull
     private String email;
 
-    @NotNull
     private String password;
 
-    private Enum<AccessEnum> role;
+    private Enum<Access> role;
 
     private String name;
     private String firstName;
 
-    private String address;
+    private AddressBean address;
 
-    public AppUser() {
+    public AppUserBean() {
     }
 
-    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role) {
+    public AppUserBean(String email, String password, Enum<Access> role) {
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
-    public AppUser(@NotNull String email, @NotNull String password, Enum<AccessEnum> role, String name, String firstName, String address) {
+    public AppUserBean(String email, String password, Enum<Access> role, String name, String firstName, AddressBean address) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -68,11 +60,11 @@ public class AppUser {
         this.password = password;
     }
 
-    public Enum<AccessEnum> getRole() {
+    public Enum<Access> getRole() {
         return role;
     }
 
-    public void setRole(Enum<AccessEnum> role) {
+    public void setRole(Enum<Access> role) {
         this.role = role;
     }
 
@@ -92,11 +84,11 @@ public class AppUser {
         this.firstName = firstName;
     }
 
-    public String getAddress() {
+    public AddressBean getAddressBean() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddressBean(AddressBean address) {
         this.address = address;
     }
 

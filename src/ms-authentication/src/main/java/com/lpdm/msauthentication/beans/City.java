@@ -1,11 +1,24 @@
-package com.lpdm.msauthentication.beans.msuser;
+package com.lpdm.msauthentication.beans;
 
-public class CityBean {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
+@Entity
+public class City {
+
+    @Id
+    @GeneratedValue
     private int id;
+
+    @NotNull
     private String name;
 
-    public CityBean() {
+    @NotNull
+    private String country;
+
+    public City() {
     }
 
     public int getId() {
