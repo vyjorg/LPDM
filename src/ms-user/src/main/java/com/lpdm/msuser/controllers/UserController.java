@@ -1,6 +1,6 @@
 package com.lpdm.msuser.controllers;
 
-import com.lpdm.msuser.msuser.AppUserBean;
+import com.lpdm.msuser.msauthentication.AppUserBean;
 import com.lpdm.msuser.proxies.MsUserProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

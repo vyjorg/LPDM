@@ -1,6 +1,6 @@
 package com.lpdm.msuser.proxies;
 
-import com.lpdm.msuser.msuser.AppUserBean;
+import com.lpdm.msuser.msauthentication.AppUserBean;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
