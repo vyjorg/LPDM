@@ -1,6 +1,6 @@
-package com.lpdm.msuser.msuser;
+package com.lpdm.msuser.msauthentication;
 
-import com.lpdm.msuser.msuser.enumeration.Access;
+import com.lpdm.msuser.msauthentication.enumeration.Access;
 
 
 public class AppUserBean {

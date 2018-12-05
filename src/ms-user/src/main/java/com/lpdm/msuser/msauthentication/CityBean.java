@@ -1,4 +1,4 @@
-package com.lpdm.msuser.msuser;
+package com.lpdm.msuser.msauthentication;
 
 public class CityBean {
 
