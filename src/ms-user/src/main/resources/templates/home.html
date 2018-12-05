@@ -4,29 +4,21 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout">
 <head>
+    <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
 </head>
 
 <body>
 
+<h1>hors container fluid</h1>
+
 <div class="container-fluid">
 
-<section layout:fragment="sidenav">
-
-    <ul>
-        <li><a href="/">Home</a> </li>
-        <li><a href="/users">Users</a></li>
-        <li><a href="/products">Products</a></li>
-    </ul>
-</section>
+    <h1>accueil</h1>
 
 <section layout:fragment="content">
     <!-- INSERT CONTENT HERE -->
-
+    <main>Vous êtes sur la page d'accueil</main>
 </section>
 <footer>
     <div class="row">

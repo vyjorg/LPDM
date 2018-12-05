@@ -4,14 +4,41 @@
       layout:decorator="layout">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>Utilisateurs</title>
 
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
-    <div th:each = "user:${users}">
-        <div th:text="${user.email}"/>
-    </div>
+
+<table class="table">
+    <tr>
+        <th>Email utilisateur</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+    </tr>
+    <tr th:each = "user:${users}">
+        <td th:text="${user.getEmail()}"/>
+        <td th:text="${user.getFirstName()}"/>
+        <td th:text="${user.getName()}"/>
+    </tr>
+</table>
+
+<section layout:fragment="content">
+    <!-- INSERT CONTENT HERE -->
+    <table class="table">
+        <tr>
+            <th>Email utilisateur</th>
+            <th>Prénom</th>
+            <th>Mot de Passe</th>
+        </tr>
+        <tr th:each = "user:${users}">
+            <td th:text="${user.getEmail()}"/>
+            <td th:text="${user.getFirstName()}"/>
+            <td th:text="${user.getName()}"/>
+    </tr>
+    </table>
+</section>
+
 
 </body>
 </html>

@@ -1,6 +1,4 @@
 
-
-
 :root {
     --elsize: brown; /* elements width */
     --margL: 10px; /* margin (left and right)*/
@@ -11,6 +9,7 @@
     --clr: floralwhite;
 }
 
+/*
 th{
     padding-right: 10px
 }
@@ -36,12 +35,12 @@ a:hover{
 header{
     margin-left: var(--margL);
     margin-right: var(--margL);
-    height: 10em;
+    height: 14em;
     background: var(--bckCol);
     border: black 2px solid;
     border-radius: var(--bRs);
     padding: 10px;
-    color: lightslategray;
+    color:lightslategray;
 }
 
 .sidenav{
@@ -81,6 +80,7 @@ header{
 ul{
     list-style: none;
 }
+*/
 /*
 .author{
     background: gray;
@@ -94,7 +94,7 @@ ul{
 .title{
     background: black ;
 }
-*/
+
 
 .fontawesome{
     width: fit-content;
@@ -127,5 +127,5 @@ ul{
 }
 
 
-
+*/
 
